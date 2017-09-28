@@ -169,6 +169,14 @@ resource "aws_security_group" "pritunl" {
     cidr_blocks = ["10.0.0.0/8"]
   }
 
+  # HTTP access for Let's Encrypt
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   # HTTP access
   ingress {
     from_port   = 443
