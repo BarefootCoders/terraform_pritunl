@@ -273,6 +273,7 @@ resource "aws_instance" "pritunl" {
   vpc_security_group_ids = [
     "${aws_security_group.pritunl.id}",
     "${aws_security_group.allow_from_office.id}",
+    "${var.pritunl_instance_sg_id}",
   ]
 
   subnet_id            = "${var.public_subnet_id}"

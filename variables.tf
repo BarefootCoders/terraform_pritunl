@@ -23,6 +23,10 @@ variable "office_ip_cidrs" {
   type        = "list"
 }
 
+variable "pritunl_instance_sg_id" {
+  description = "Additional security group ID to associate with VPN instance"
+}
+
 variable "tag_product" {}
 variable "tag_env" {}
 variable "tag_purpose" {}
